@@ -1,0 +1,10 @@
+/* .custompanel.css */
+.p-datatable .p-datatable-header {
+  background-color: rgb(163 230 53) !important;
+}
+
+.p-datatable-thead th {
+  background-color: rgb(34 211 238) !important;
+  color: white !important;
+  text-align: center !important;
+}
