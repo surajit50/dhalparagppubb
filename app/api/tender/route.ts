@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import Tender from "@models/tender";
 import { connectToDB } from "@utils/database";
 
-export async function GET(req: NextRequest, { params }: any) {
+export async function GET(req: NextRequest) {
   try {
     const title = req.nextUrl.searchParams.get("title");
     const tenderID = req.nextUrl.searchParams.get("tenderID");
