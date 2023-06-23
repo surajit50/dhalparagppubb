@@ -29,17 +29,28 @@ export async function GET(req: NextRequest) {
     if (financialYear) {
       queryObject.financialYear = { $regex: financialYear, $options: "i" };
     }
-    //.skip(skip).limit(limit)
+    //.skip(skip).limit(limit
 
     await connectToDB();
     const tenders = await Tender.find(queryObject);
-    return new NextResponse(JSON.stringify({ tenders }), {
+
+    return new NextResponse(JSON.stringify(tenders), {
       status: 200,
       headers: {
         "content-type": "application/json",
       },
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
+
+    return new NextResponse(
+      JSON.stringify({ error: "Internal Server Error" }),
+      {
+        status: 500,
+        headers: {
+          "content-type": "application/json",
+        },
+      }
+    );
   }
 }
