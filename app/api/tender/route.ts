@@ -33,7 +33,12 @@ export async function GET(req: NextRequest) {
 
     await connectToDB();
     const tenders = await Tender.find(queryObject);
-    return NextResponse.json(tenders);
+    return new NextResponse(JSON.stringify({ tenders }), {
+      status: 200,
+      headers: {
+        "content-type": "application/json",
+      },
+    });
   } catch (error) {
     console.log(error);
   }
