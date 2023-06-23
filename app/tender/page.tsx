@@ -20,7 +20,7 @@ export default function Tender() {
   });
 
   const fetchTender = async () => {
-    const res = await fetch("http://localhost:3000/api/tender");
+    const res = await fetch(`api/tender`);
     try {
       const data = await res.json();
       const newdataarray = await data.map((tenderdata: any, index: any) => {
