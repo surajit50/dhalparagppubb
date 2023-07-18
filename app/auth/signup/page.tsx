@@ -89,7 +89,8 @@ const Signup = () => {
             </button>
           </form>
           <div className="mt-3">
-            <Link href="/">Already have account!</Link>
+            <Link href="/login">Already have account!</Link>
+            <Link href="/">back to Home</Link>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import { ChangeEventHandler, FormEventHandler, useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 const page = () => {
   const [error, setError] = useState("");
   const [userInfo, setUserInfo] = useState({
@@ -75,6 +76,9 @@ const page = () => {
                 Login
               </button>
             </form>
+            <div className="mt-3">
+              <Link href="/">back to Home</Link>
+            </div>
           </div>
         </div>
       </div>
