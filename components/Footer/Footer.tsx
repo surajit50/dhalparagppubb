@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
-import { footerLinks } from "../../constants";
+import { footerLinks } from "@constants";
 
 const Footer = () => {
   const { data, status } = useSession();

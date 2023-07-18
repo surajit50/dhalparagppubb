@@ -6,7 +6,7 @@ import { Column } from "primereact/column";
 import { InputText } from "primereact/inputtext";
 import { FilterMatchMode } from "primereact/api";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "../../public/assets/theme.css";
+import "../../../public/assets/theme.css";
 //core
 import "primereact/resources/primereact.min.css";
 

@@ -99,3 +99,21 @@ export const footerLinks = [
     ],
   },
 ];
+
+export const SideNavLinks = [
+  { href: "/dashboard", key: "Dashboard", text: "Dashboard" },
+  { href: "/member", key: "Employee", text: "My Profile" },
+  { href: "/member", key: "Member", text: "Panchayat Profile" },
+  { href: "/member", key: "Member", text: "General Profile" },
+  { href: "/member", key: "Member", text: "Basic Profile" },
+  { href: "/member", key: "Member", text: "General Election Details" },
+  { href: "/member", key: "Member", text: "Elected Member" },
+  { href: "/member", key: "Member", text: "Committee Member" },
+  { href: "/member", key: "Member", text: "Miscellaneous Details" },
+  { href: "/tender", key: "Tender", text: "Meri Panchayat" },
+  { href: "/notice", key: "Notice", text: "Notice" },
+  { href: "/emplyee", key: "Employee", text: "Employee Details" },
+  { href: "/member", key: "Member", text: "Member" },
+  { href: "/tender", key: "Tender", text: "Tender" },
+  { href: "/notice", key: "Notice", text: "Reports" },
+];
