@@ -31,7 +31,7 @@
     "models/tender.ts",
     "components/Header/loading.jsx",
     "utils/database.js",
-    "app/tender/page.jsx"
+    "app/(guest__route)/tender/page.jsx"
   ],
   "exclude": ["node_modules"]
 }
