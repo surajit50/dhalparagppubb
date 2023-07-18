@@ -1,6 +1,6 @@
-import "../styles/globals.css";
+import Header from "@components/Header/Header";
+import Footer from "@components/Footer/Footer";
 
-import AuthProviders from "@components/AuthProviders";
 import React, { ReactNode } from "react";
 
 interface Props {
@@ -13,14 +13,10 @@ export const metadata = {
 
 export default async function RootLayout({ children }: Props) {
   return (
-    <AuthProviders>
-      <html lang="en">
-        <body>
-          <main className="app">
-            <div>{children}</div>
-          </main>
-        </body>
-      </html>
-    </AuthProviders>
+    <>
+      <Header />
+      <div>{children}</div>
+      <Footer />
+    </>
   );
 }

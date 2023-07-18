@@ -16,10 +16,6 @@ export const menuItem = [
     link: "/employee",
   },
   {
-    text: "Online Service",
-    link: "/onlineService",
-  },
-  {
     text: "Media Centre",
     link: "/mediaCentre",
   },
@@ -30,5 +26,21 @@ export const menuItem = [
   {
     text: "Contact",
     link: "/contact",
+  },
+  {
+    text: "Signup",
+    link: "auth/signup",
+  },
+  {
+    text: "Login",
+    link: "auth/login",
+  },
+  {
+    text: "Staff",
+    link: "auth/stafflogin",
+  },
+  {
+    text: "Admin",
+    link: "auth/adminlogin",
   },
 ];
