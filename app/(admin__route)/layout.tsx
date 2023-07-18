@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 
 import Sidebar from "@components/adminDashboardComponents/sidebar/Sidebar";
 import AdminNavbar from "@components/adminDashboardComponents/Navbars/AdminNavbar";
+
 interface Props {
   children: ReactNode;
 }
@@ -16,12 +17,12 @@ export default async function AdminPrivateLayout({ children }: Props) {
 
   if (!isAdmin) redirect("/auth/login");
   return (
-    <body className="flex">
+    <div className="flex">
       <Sidebar />
       <div className="px-4  mx-auto w-full m-5">
         <AdminNavbar />
         {children}
       </div>
-    </body>
+    </div>
   );
 }

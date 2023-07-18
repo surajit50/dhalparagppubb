@@ -1,4 +1,4 @@
-import LineCharts from "@components/LineChart/LineCharts";
+import LineCharts from "../LineChart/LineCharts";
 
 const Dashboard = () => {
   return (

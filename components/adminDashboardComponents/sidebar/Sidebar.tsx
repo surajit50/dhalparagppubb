@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { SideNavLinks } from "@constants";
@@ -23,7 +24,7 @@ const SideMenuColumn = ({ title, links, key }: ColumnProps) => (
 export default function Sidebar() {
   return (
     <nav className=" hidden md:left-0 md:block min-h-screen md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white  flex-wrap items-center justify-between w-96 py-4 px-6">
-      <Link href="/">
+      <Link href="/adminDashboard">
         <Image
           src="images/logo-no-background.svg"
           width={120}

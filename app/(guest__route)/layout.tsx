@@ -11,7 +11,7 @@ export const metadata = {
   description: "Panchayat & Rural Development",
 };
 
-export default async function RootLayout({ children }: Props) {
+export default async function AdminPrivateLayout({ children }: Props) {
   return (
     <>
       <Header />
