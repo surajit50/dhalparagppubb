@@ -12,6 +12,6 @@ export default async function PubilicPrivateLayout({ children }: Props) {
   const user = session?.user as { role: string } | undefined;
   const isPublic = user?.role === "public";
 
-  if (!isPublic) redirect("/auth/login");
+  if (!isPublic) redirect("/");
   return <>{children}</>;
 }
