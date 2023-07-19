@@ -101,19 +101,12 @@ export const footerLinks = [
 ];
 
 export const SideNavLinks = [
-  { href: "pages/dashboard", key: "Dashboard", text: "Dashboard" },
-  { href: "pages/member", key: "Employee", text: "My Profile" },
-  { href: "pages/member", key: "Member", text: "Panchayat Profile" },
-  { href: "pages/member", key: "Member", text: "General Profile" },
-  { href: "pages/member", key: "Member", text: "Basic Profile" },
-  { href: "pages/member", key: "Member", text: "General Election Details" },
-  { href: "pages/member", key: "Member", text: "Elected Member" },
-  { href: "pages/member", key: "Member", text: "Committee Member" },
-  { href: "pages/member", key: "Member", text: "Miscellaneous Details" },
-  { href: "pages/tender", key: "Tender", text: "Meri Panchayat" },
-  { href: "pages/notice", key: "Notice", text: "Notice" },
-  { href: "pages/emplyee", key: "Employee", text: "Employee Details" },
-  { href: "pages/member", key: "Member", text: "Member" },
-  { href: "pages/tender", key: "Tender", text: "Tender" },
-  { href: "pages/notice", key: "Notice", text: "Reports" },
+  { href: "/pages/dashboard", key: "Dashboard", text: "Dashboard" },
+
+  { href: "/pages/tender", key: "Tender", text: "Meri Panchayat" },
+  { href: "/pages/notice", key: "Notice", text: "Notice" },
+  { href: "/pages/emplyee", key: "Employee", text: "Employee Details" },
+  { href: "/pages/member", key: "Member", text: "Member" },
+  { href: "/pages/tender", key: "Tender", text: "Tender" },
+  { href: "/pages/notice", key: "Notice", text: "Reports" },
 ];
