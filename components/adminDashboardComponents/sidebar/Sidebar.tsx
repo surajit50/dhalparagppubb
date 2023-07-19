@@ -1,50 +1,158 @@
 "use client";
-import React from "react";
+import {
+  Card,
+  Typography,
+  List,
+  ListItem,
+  ListItemPrefix,
+  ListItemSuffix,
+  Chip,
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
+} from "@material-tailwind/react";
+import {
+  PresentationChartBarIcon,
+  ShoppingBagIcon,
+  UserCircleIcon,
+  Cog6ToothIcon,
+  InboxIcon,
+  PowerIcon,
+} from "@heroicons/react/24/solid";
+import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
 import Link from "next/link";
-import { SideNavLinks } from "@constants";
 import Image from "next/image";
-
-type ColumnProps = {
-  title: string;
-  links: string;
-  key: any;
-};
-
-const SideMenuColumn = ({ title, links, key }: ColumnProps) => (
-  <li className="items-center w-full" key={key}>
-    <Link
-      href={links}
-      className="text-sm uppercase py-3 font-bold block px-3 text-gray-800 rounded-md hover:bg-gray-300 transition-all"
-    >
-      {title}
-    </Link>
-  </li>
-);
-
+import { SideNavLinks } from "@constants";
+import SignOutButton from "@components/SignOutButton";
 export default function Sidebar() {
+  const [open, setOpen] = useState(0);
+
+  const handleOpen = (value: any) => {
+    setOpen(open === value ? 0 : value);
+  };
+
   return (
-    <nav className=" hidden md:left-0 md:block min-h-screen md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white  flex-wrap items-center justify-between w-96 py-4 px-6">
-      <Link href="/adminDashboard">
-        <Image
-          src="/images/logo-no-background.svg"
-          width={120}
-          height={100}
-          alt="dhalapragp logo"
-        />
-      </Link>
+    <Card className="hidden md:left-0 md:block min-h-screen md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white  flex-wrap items-center justify-between w-96 py-4 px-6">
+      <div className="mb-2 p-4">
+        <Link href="/adminDashboard">
+          <Image
+            src="/images/logo-no-background.svg"
+            width={120}
+            height={100}
+            alt="dhalapragp logo"
+          />
+        </Link>
+      </div>
+      <List>
+        <Accordion
+          open={open === 1}
+          icon={
+            <ChevronDownIcon
+              strokeWidth={2.5}
+              className={`mx-auto h-4 w-4 transition-transform ${
+                open === 1 ? "rotate-180" : ""
+              }`}
+            />
+          }
+        >
+          <ListItem className="p-0" selected={open === 1}>
+            <AccordionHeader
+              onClick={() => handleOpen(1)}
+              className="border-b-0 p-3"
+            >
+              <ListItemPrefix>
+                <PresentationChartBarIcon className="h-5 w-5" />
+              </ListItemPrefix>
+              <Typography color="blue-gray" className="mr-auto font-normal">
+                Dashboard
+              </Typography>
+            </AccordionHeader>
+          </ListItem>
+          <AccordionBody className="py-1">
+            <List className="p-0">
+              <ListItem>
+                <ListItemPrefix>
+                  <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                </ListItemPrefix>
+                Analytics
+              </ListItem>
+              <ListItem>
+                <ListItemPrefix>
+                  <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                </ListItemPrefix>
+                Reporting
+              </ListItem>
+              <ListItem>
+                <ListItemPrefix>
+                  <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                </ListItemPrefix>
+                Projects
+              </ListItem>
+            </List>
+          </AccordionBody>
+        </Accordion>
+        <Accordion
+          open={open === 2}
+          icon={
+            <ChevronDownIcon
+              strokeWidth={2.5}
+              className={`mx-auto h-4 w-4 transition-transform ${
+                open === 2 ? "rotate-180" : ""
+              }`}
+            />
+          }
+        >
+          <ListItem className="p-0" selected={open === 2}>
+            <AccordionHeader
+              onClick={() => handleOpen(2)}
+              className="border-b-0 p-3"
+            >
+              <ListItemPrefix>
+                <ShoppingBagIcon className="h-5 w-5" />
+              </ListItemPrefix>
+              <Typography color="blue-gray" className="mr-auto font-normal">
+                E-Commerce
+              </Typography>
+            </AccordionHeader>
+          </ListItem>
+          <AccordionBody className="py-1">
+            <List className="p-0">
+              <ListItem>
+                <ListItemPrefix>
+                  <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                </ListItemPrefix>
+                Orders
+              </ListItem>
+              <ListItem>
+                <ListItemPrefix>
+                  <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                </ListItemPrefix>
+                Products
+              </ListItem>
+            </List>
+          </AccordionBody>
+        </Accordion>
 
-      {/* Collapse */}
-
-      {/* Divider */}
-      <hr className="my-4 md:min-w-full" />
-      {/* Heading */}
-
-      {/* Navigation */}
-      <ul className="md:flex-col md:min-w-full flex flex-col list-none">
-        {SideNavLinks.map((items, i) => (
-          <SideMenuColumn title={items.text} links={items.href} key={i} />
+        {/*menu link */}
+        {SideNavLinks.map((item, i) => (
+          <Link href={item.href}>
+            <ListItem>
+              <ListItemPrefix>
+                <InboxIcon className="h-5 w-5" />
+              </ListItemPrefix>
+              {item.text}
+            </ListItem>
+          </Link>
         ))}
-      </ul>
-    </nav>
+
+        <ListItem>
+          <ListItemPrefix>
+            <PowerIcon className="h-5 w-5" />
+          </ListItemPrefix>
+          <SignOutButton />
+        </ListItem>
+      </List>
+    </Card>
   );
 }

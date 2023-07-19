@@ -1,6 +1,8 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { menuItem } from "./menuLink";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   return (
@@ -26,7 +28,7 @@ const Header = () => {
               key={index}
               className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased"
             >
-              <Link className="mr-5 hover:text-gray-900" href={menuLink.link}>
+              <Link className="mr-5 hover:text-gray-900 " href={menuLink.link}>
                 {menuLink.text}
               </Link>
             </li>
