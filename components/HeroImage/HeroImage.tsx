@@ -1,19 +1,51 @@
+"use client";
+
+import { Carousel, IconButton } from "@material-tailwind/react";
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 const HeroImage = () => {
   return (
-    <div className="heroImage relative flex flex-col justify-center items-center">
-      <div className="image__caption absolute   text-center ">
-        <h1 className="text-white font-bold text-3xl">
-          Welcome to Dhalpara Gram Panchayat
-        </h1>
-        <h3 className="text-sm font-bold text-yellow-50">
-          The Most Exciting guide to living, working, visiting
-        </h3>
-        <button className="bg-cyan-500 hover:bg-cyan-600 px-4 py-2 text-white mt-2">
-          Discover More
-        </button>
-      </div>
-      <img src="/assets/images/heroImage.jpeg" className="w-[100%] h-[50vh] " />
-    </div>
+    <Carousel
+      className="rounded-xl"
+      transition={{ type: "tween", duration: 1 }}
+      prevArrow={({ handlePrev }) => (
+        <IconButton
+          variant="text"
+          color="white"
+          size="lg"
+          onClick={handlePrev}
+          className="!absolute top-2/4 -translate-y-2/4 left-4"
+        >
+          <ArrowLeftIcon strokeWidth={2} className="w-6 h-6" />
+        </IconButton>
+      )}
+      nextArrow={({ handleNext }) => (
+        <IconButton
+          variant="text"
+          color="white"
+          size="lg"
+          onClick={handleNext}
+          className="!absolute top-2/4 -translate-y-2/4 !right-4"
+        >
+          <ArrowRightIcon strokeWidth={2} className="w-6 h-6" />
+        </IconButton>
+      )}
+    >
+      <img
+        src="/assets/images/heroImage.jpeg"
+        className="h-[400px] w-full object-cover"
+        alt="image 1"
+      />
+      <img
+        src="/assets/images/2020063027.jpg"
+        className="h-[400px] w-full object-cover"
+        alt="image 3"
+      />
+      <img
+        src="/assets/images/2020063026-1.jpg"
+        className="h-[400px] w-full object-cover"
+        alt="image 2"
+      />
+    </Carousel>
   );
 };
 

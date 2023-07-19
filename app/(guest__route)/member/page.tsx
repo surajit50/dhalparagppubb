@@ -1,7 +1,11 @@
-import React from "react";
+import Member from "@components/Member/Member";
 
 const page = () => {
-  return <div>Member</div>;
+  return (
+    <div>
+      <Member />
+    </div>
+  );
 };
 
 export default page;

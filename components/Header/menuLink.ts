@@ -29,18 +29,14 @@ export const menuItem = [
   },
   {
     text: "Signup",
-    link: "auth/signup",
+    link: "/auth/signup",
   },
   {
     text: "Login",
-    link: "auth/login",
+    link: "/auth/login",
   },
   {
-    text: "Staff",
-    link: "auth/stafflogin",
-  },
-  {
-    text: "Admin",
-    link: "auth/adminlogin",
+    text: "Staff Login",
+    link: "/auth/stafflogin",
   },
 ];

@@ -2,7 +2,7 @@ import React from "react";
 
 const Notice = () => {
   return (
-    <div className=" min-h-[400px] overflow-hidden p-4 mb-2 mx-1 shadow-sm flex-1 bg-white">
+    <div className="h-[350px] overflow-hidden p-4 mb-2 mx-1 shadow-sm flex-1 bg-white">
       <div className="w-full border-2 border-[#cfcfcf] pb-[10px] m-0 mb-[15px] pt-[15px]  bg-[#00aed9] text-white">
         <h3 className="head-title">Notice Board</h3>
       </div>

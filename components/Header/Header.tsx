@@ -4,34 +4,43 @@ import { menuItem } from "./menuLink";
 
 const Header = () => {
   return (
-    <nav className="mx-auto block w-full  rounded-xl border border-white/80 bg-white bg-opacity-80 py-2 px-4 text-white shadow-md backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-4">
-      <div>
-        <div className="container mx-auto flex items-center justify-between text-gray-900">
-          <Link href="/" className="logo">
-            <Image
-              src="/assets/images/logo-no-background.svg"
-              alt="Dhalparagp Logo"
-              width={150}
-              height={50}
-              className="object-contain bg-white p-1 rounded"
-            />
-          </Link>
-          <ul className="hidden items-center gap-6 lg:flex">
-            {menuItem.map((menuLink, index) => (
-              <li
-                key={index}
-                className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased"
-              >
-                <Link className="flex items-center" href={menuLink.link}>
-                  {menuLink.text}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        {/*Mobile menu*/}
+    <header className="text-gray-600 body-font border-b-2	 border-blue-gray-100">
+      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <Link
+          href="/"
+          className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+        >
+          <Image
+            src="/assets/images/logo-no-background.svg"
+            alt="Dhalparagp Logo"
+            width={140}
+            height={40}
+            className=" text-white p-2 "
+          />
+
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </Link>
+        <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+          {menuItem.map((menuLink, index) => (
+            <li
+              key={index}
+              className="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased"
+            >
+              <Link className="mr-5 hover:text-gray-900" href={menuLink.link}>
+                {menuLink.text}
+              </Link>
+            </li>
+          ))}
+        </nav>
+
+        <Link
+          href="/auth/adminlogin"
+          className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
+        >
+          Admin Login
+        </Link>
       </div>
-    </nav>
+    </header>
   );
 };
 

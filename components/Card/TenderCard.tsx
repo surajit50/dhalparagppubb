@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 const TenderCard = () => {
   return (
-    <div className="h-[350px] overflow-x-scroll">
+    <div className=" overflow-x-scroll">
       <ul className="latest-news-ul flex flex-col">
         <li className="flex  items-center">
           <Link href="">items.title</Link>

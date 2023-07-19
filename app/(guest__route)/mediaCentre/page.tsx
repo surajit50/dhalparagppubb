@@ -1,7 +1,7 @@
-import React from "react";
+import Gallery from "@components/Gallery/Gallery";
 
 const mediaCentre = () => {
-  return <div>mediaCentre</div>;
+  return <Gallery />;
 };
 
 export default mediaCentre;
