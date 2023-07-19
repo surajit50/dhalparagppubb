@@ -12,6 +12,6 @@ export default async function UserPrivateLayout({ children }: Props) {
   const user = session?.user as { role: string } | undefined;
   const isStaff = user?.role === "user";
 
-  if (!isStaff) redirect("/auth/login");
+  if (!isStaff) redirect("/");
   return <>{children}</>;
 }
