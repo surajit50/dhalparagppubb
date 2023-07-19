@@ -15,7 +15,7 @@ export default async function AdminPrivateLayout({ children }: Props) {
   const user = session?.user as { role: string } | undefined;
   const isAdmin = user?.role === "admin";
 
-  if (!isAdmin) redirect("/auth/login");
+  if (!isAdmin) redirect("/");
   return (
     <div className="flex">
       <Sidebar />
