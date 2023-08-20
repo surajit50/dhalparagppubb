@@ -10,6 +10,8 @@ const page = () => {
     email: "",
     password: "",
   });
+
+  const [busy, setbusy] = useState("loading");
   const router = useRouter();
   const { email, password } = userInfo;
 
