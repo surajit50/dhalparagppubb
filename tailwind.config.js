@@ -10,7 +10,7 @@ module.exports = {
         '100%': { transform: 'translateX(-100%)' },
       }
     },
-  }
+  },
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
